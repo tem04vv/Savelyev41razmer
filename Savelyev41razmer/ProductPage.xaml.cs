@@ -23,6 +23,10 @@ namespace Savelyev41razmer
         public ProductPage()
         {
             InitializeComponent();
+
+            var currentProducts = Savelyev41Entities1.GetContext().Product.ToList();
+
+            ProductListView.ItemsSource = currentProducts;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
