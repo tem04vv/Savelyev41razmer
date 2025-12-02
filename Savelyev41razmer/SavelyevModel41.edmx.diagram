@@ -4,16 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8865f3b9f76343f0a4d3c18af20a834d" Name="Diagram1">
-        <EntityTypeShape EntityType="Savelyev41Model.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Savelyev41Model.OrderProduct" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Savelyev41Model.PickUpPoint" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Savelyev41Model.Product" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Savelyev41Model.Role" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Savelyev41Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Savelyev41Model.User" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+      <Diagram DiagramId="8584d6acf7b2403f8b70427c339b1c3b" Name="Diagram1">
+        <EntityTypeShape EntityType="Savelyev41Model.Order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Savelyev41Model.OrderProduct" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Savelyev41Model.PickUpPoint" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Savelyev41Model.Product" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Savelyev41Model.Role" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Savelyev41Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Savelyev41Model.User" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <AssociationConnector Association="Savelyev41Model.FK__OrderProd__Order__403A8C7D" ManuallyRouted="false" />
         <AssociationConnector Association="Savelyev41Model.FK_Order_PickUpPoint" ManuallyRouted="false" />
+        <AssociationConnector Association="Savelyev41Model.FK_Order_User1" ManuallyRouted="false" />
         <AssociationConnector Association="Savelyev41Model.FK__OrderProd__Produ__412EB0B6" ManuallyRouted="false" />
         <AssociationConnector Association="Savelyev41Model.FK__User__UserRole__398D8EEE" ManuallyRouted="false" />
       </Diagram>

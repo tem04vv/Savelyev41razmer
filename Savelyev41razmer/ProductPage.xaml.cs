@@ -20,6 +20,8 @@ namespace Savelyev41razmer
     /// </summary>
     public partial class ProductPage : Page
     {
+        int CurrentNumRecords, AllNumRecords;
+
         public ProductPage()
         {
             InitializeComponent();
@@ -27,11 +29,75 @@ namespace Savelyev41razmer
             var currentProducts = Savelyev41Entities1.GetContext().Product.ToList();
 
             ProductListView.ItemsSource = currentProducts;
-        }
 
+            ComboType.SelectedIndex = 0;
+        }
+        private void UpdateProducts()
+        {
+            var currentProducts = Savelyev41Entities1.GetContext().Product.ToList();
+
+            AllNumRecords = currentProducts.Count;
+
+            if (ComboType.SelectedIndex == 0)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount) >= 0 && (p.ProductDiscountAmount) <= 100).ToList();
+            }
+
+            if (ComboType.SelectedIndex == 1)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount) >= 0 && (p.ProductDiscountAmount) < 10).ToList();
+            }
+
+            if (ComboType.SelectedIndex == 2)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount) >= 10 && (p.ProductDiscountAmount) < 15).ToList();
+            }
+
+            if (ComboType.SelectedIndex == 3)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount) >= 15 && (p.ProductDiscountAmount) <= 100).ToList();
+            }
+
+            currentProducts = currentProducts.Where(p => p.ProductName.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+
+            ProductListView.ItemsSource = currentProducts.ToList();
+
+            if (RButtonUp.IsChecked.Value)
+            {
+                currentProducts = currentProducts.OrderBy(p => p.ProductCost).ToList();
+            }
+
+            if (RButtonDown.IsChecked.Value)
+            {
+                currentProducts = currentProducts.OrderByDescending(p => p.ProductCost).ToList();
+            }
+
+            CurrentNumRecords = currentProducts.Count;
+           
+            ProductListView.ItemsSource = currentProducts;
+
+            TBAllRecords.Text = CurrentNumRecords.ToString() + " из " + AllNumRecords.ToString();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new AddEditPage());
         }
+
+        private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateProducts();
+        }
+        private void ComboType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateProducts();
+        }
+        private void RButtonUp_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateProducts();
+        }
+        private void RButtonDown_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateProducts();
+        } 
     }
 }

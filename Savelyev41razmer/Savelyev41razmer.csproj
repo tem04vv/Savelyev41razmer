@@ -174,16 +174,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SavelyevModel41.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SavelyevModel41.edmx</DependentUpon>
-      <LastGenOutput>SavelyevModel41.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="SavelyevModel41.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SavelyevModel41.edmx</DependentUpon>
-      <LastGenOutput>SavelyevModel41.cs</LastGenOutput>
-    </Content>
     <Resource Include="Товары\B320R5.jpg" />
     <Resource Include="Товары\D329H3.jpg" />
     <Resource Include="Товары\D572U8.jpg" />
@@ -194,6 +184,18 @@
     <Resource Include="Товары\H782T5.jpg" />
     <Resource Include="Товары\J384T6.jpg" />
     <Resource Include="Товары\А112Т4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SavelyevModel41.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SavelyevModel41.edmx</DependentUpon>
+      <LastGenOutput>SavelyevModel41.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SavelyevModel41.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SavelyevModel41.edmx</DependentUpon>
+      <LastGenOutput>SavelyevModel41.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

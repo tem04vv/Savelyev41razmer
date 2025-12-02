@@ -16,11 +16,12 @@ namespace Savelyev41razmer
     public partial class Savelyev41Entities1 : DbContext
     {
         private static Savelyev41Entities1 _context;
-
         public static Savelyev41Entities1 GetContext()
         {
             if (_context == null)
+            {
                 _context = new Savelyev41Entities1();
+            }
 
             return _context;
         }

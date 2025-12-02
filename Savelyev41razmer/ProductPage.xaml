@@ -9,7 +9,56 @@
       Title="ProductPage" FontFamily="Comic Sans MS">
 
     <Grid>
-        <ListView Name="ProductListView" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+ 
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <TextBlock  Text="кол-во" TextAlignment="Left" 
+                            Width="80" FontSize="20" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="TBAllRecords" FontSize="20" Height="23" VerticalAlignment="Center"></TextBlock>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="1" Margin="5">
+                <TextBlock  Text="поиск по наименованию" TextAlignment="Center" 
+                         Width="195" FontSize="16"></TextBlock>
+                <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged"
+                         Width="195" FontSize="16"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Margin="5" >
+                <RadioButton Content="по возрастанию стоимости" GroupName="Sort"
+                 Width="220" FontSize="15" Checked="RButtonUp_Checked"
+                 Name="RButtonUp"></RadioButton>
+                <RadioButton Content="по убыванию стоимости" GroupName="Sort" 
+                 Width="220" FontSize="15" Checked="RButtonDown_Checked"
+                 Name="RButtonDown"></RadioButton>
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" Margin="5">
+                <TextBlock Text="фильтрация по скидке" TextAlignment="Center"
+                           Width="200" FontSize="16"></TextBlock>
+                <ComboBox Name="ComboType" SelectionChanged="ComboType_SelectionChanged"
+                          Width="200" FontSize="16">
+                    <TextBlock>Все диапазоны</TextBlock>
+                    <TextBlock> от 0 до 9,99%</TextBlock>
+                    <TextBlock> от 10 до 14,99%</TextBlock>
+                    <TextBlock> от 15% и более</TextBlock>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+
+        <ListView Name="ProductListView" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
