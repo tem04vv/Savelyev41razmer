@@ -11,9 +11,12 @@
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image Source="/logo.png" HorizontalAlignment="Left" Margin="5"></Image>
-        <TextBlock Text="41 размер" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <Grid Grid.Row="0" Background="#FFFFCC99">
+            <Image Source="/logo.png" HorizontalAlignment="Left" Margin="5"></Image>
+            <TextBlock Text="41 размер" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            <Button Content="Назад" Name="BtnBack" HorizontalAlignment="Right" Click="BtnBack_Click"></Button>
+        </Grid>
         <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>
-        <Button Content="Назад" Name="BtnBack" HorizontalAlignment="Right" Click="BtnBack_Click"></Button>
+        
     </Grid>
 </Window>

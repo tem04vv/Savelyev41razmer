@@ -10,6 +10,7 @@
             <Setter Property="Height" Value="30"></Setter>
             <Setter Property="Background" Value="#FFCC6600"></Setter>
             <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
         </Style>
     </Application.Resources>
 </Application>

@@ -22,9 +22,24 @@ namespace Savelyev41razmer
     {
         int CurrentNumRecords, AllNumRecords;
 
-        public ProductPage()
+        public ProductPage(User user)
         {
             InitializeComponent();
+
+            FIOTB.Text = user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
+            switch (user.UserRole)
+            {
+                case 1:
+                    RoleTB.Text = "Клиент"; break;
+                case 2:
+                    RoleTB.Text = "Менеджер"; break;
+                case 3:
+                    RoleTB.Text = "Администратор"; break;
+                case 4:
+                    RoleTB.Text = "Гость"; break;
+
+            }
+            
 
             var currentProducts = Savelyev41Entities1.GetContext().Product.ToList();
 
@@ -60,7 +75,7 @@ namespace Savelyev41razmer
 
             currentProducts = currentProducts.Where(p => p.ProductName.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
 
-            ProductListView.ItemsSource = currentProducts.ToList();
+            //ProductListView.ItemsSource = currentProducts.ToList();
 
             if (RButtonUp.IsChecked.Value)
             {
@@ -95,6 +110,12 @@ namespace Savelyev41razmer
         {
             UpdateProducts();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void RButtonDown_Checked(object sender, RoutedEventArgs e)
         {
             UpdateProducts();
